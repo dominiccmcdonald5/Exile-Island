@@ -18,7 +18,6 @@ function App() {
 
   return (
     <main className="page-shell">
-
       <section className="button-grid" aria-label="Button wall">
         {buttons.map((index) => (
           <button
