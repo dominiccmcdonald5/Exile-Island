@@ -1,0 +1,86 @@
+.page-shell {
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.top {
+  text-align: center;
+  margin: 0 auto 18px;
+}
+
+.top h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.top p {
+  margin: 8px 0 0;
+  opacity: 0.9;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: 6px;
+  width: 100%;
+}
+
+.pixel-button {
+  border: 1px solid rgba(0, 0, 0, 0.28);
+  background: linear-gradient(130deg, #ef3eef, #4ff5ee);
+  color: #07131d;
+  padding: 6px 2px;
+  border-radius: 6px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.pixel-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.pixel-button:focus-visible {
+  outline: 2px solid #4ff5ee;
+  outline-offset: 1px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(9, 8, 19, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.widget {
+  min-width: min(360px, 90vw);
+  background: #f9fcff;
+  border: 2px solid #ef3eef;
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.26);
+}
+
+.widget p {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.close {
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background: #4ff5ee;
+  color: #0f1f22;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
