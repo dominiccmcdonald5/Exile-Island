@@ -5,12 +5,19 @@ function App() {
   const totalButtons = 10000
   const [secretButton] = useState(() => Math.floor(Math.random() * totalButtons))
   const [showPopup, setShowPopup] = useState(false)
+  const [clickedButtons, setClickedButtons] = useState<Set<number>>(() => new Set())
   const buttons = useMemo(
     () => Array.from({ length: totalButtons }, (_, index) => index),
     [totalButtons],
   )
 
   const handleButtonClick = (index: number) => {
+    setClickedButtons((current) => {
+      const next = new Set(current)
+      next.add(index)
+      return next
+    })
+
     if (index === secretButton) {
       setShowPopup(true)
     }
@@ -25,7 +32,7 @@ function App() {
             className="pixel-button"
             onClick={() => handleButtonClick(index)}
           >
-            {index + 1}
+            {clickedButtons.has(index) ? 'Clicked' : index + 1}
           </button>
         ))}
       </section>
